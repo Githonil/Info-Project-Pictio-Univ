@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+	<head>
+		<title>Accueil</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="./styles/reception.css">
+	</head>
+	<body>
+		<main class="reception">
+			<nav class="select">
+				<button class="active" id="guest">Invité</button>
+				<button class="inactive" id="player">Joueur</button>
+			</nav>
+			
+			<div class="show" id="guest_content">
+				<div class="left">
+					<img src="./images/base_character.svg" alt="character">
+					<button class="left_up"></button>
+					<button class="left_down"></button>
+					<button class="right_up"></button>
+					<button class="right_down"></button>
+				</div>
+
+				<div class="right">
+					<label>
+						<p>Pseudo</p>
+						<input type="text" name="pseudo">
+					</label>
+
+					<label>
+						<p>Room Code <span>?</span></p>
+						<input type="text" name="room_code">
+					</label>
+					<div id="info"></div>
+					
+					<nav>
+						<button class="play">Jouer</button>
+						<button class="host">Héberger</button>
+					</nav>
+				</div>
+			</div>
+			
+			<div class="hidden" id="player_content_disconnect">
+				<nav class="center">
+					<a href="#">Connexion</a>
+					<a href="#">Inscription</a>
+				</nav>
+			</div>
+
+			<div class="hidden" id="player_content_connect">
+				<div class="left">
+					<h1 id="pseudo">Pseudo</h1>
+					<img src="./images/base_character.svg" alt="character">
+				</div>
+
+				<div class="right">
+					<label>
+						<p>Room Code <span>?</span></p>
+						<input type="text" name="room_code">
+					</label>
+					<div id="info"></div>
+
+					<nav>
+						<button class="play">Jouer</button>
+						<button class="host">Héberger</button>
+					</nav>
+				</div>
+				
+				<button class="account">Mon compte</button>
+			</div>
+		</main>
+	</body>
+</html>
