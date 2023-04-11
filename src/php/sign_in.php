@@ -21,7 +21,7 @@
                 $password = $_POST["password"];
                 $confirm_password = $_POST["confirm_password"];
 
-                $db = call_dataBase("localhost", "pictio_univ", 3306);
+                $db = call_dataBase("localhost", "root", "", "pictio_univ", 3306);
 
                 $request = "SELECT email.mail FROM email
                                 WHERE email.mail = \"$email\";";

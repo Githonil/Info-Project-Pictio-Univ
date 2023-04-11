@@ -41,12 +41,12 @@
      * @param name Le nom de la base de données.
      * @return db Renvoie la base de données.
      */
-    function call_dataBase($host, $name, $port = 0) {
-        ($port === 0) ? $db = @(new mysqli($host, "root", "", $name)) : $db = @(new mysqli($host, "root", "", $name, $port));
+    function call_dataBase($host, $userName, $password, $name, $port = 0) {
+        ($port === 0) ? $db = @(new mysqli($host, $userName, $password, $name)) : $db = @(new mysqli($host, $userName, $password, $name, $port));
         if ($db->connect_errno) {
             $db = @(new mysqli($host, "root", ""));
-            create_dataBase($db);
         }
+        create_dataBase($db);
 
         $request = "USE $name";
         @($db->query($request));
