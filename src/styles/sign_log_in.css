@@ -82,6 +82,17 @@ a {
     border: solid #000 1px;
 }
 
+label {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label * {
+    margin: 5px;
+}
+
 
 
 /** CSS en mode téléphone **/
