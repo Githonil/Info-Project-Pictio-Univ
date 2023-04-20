@@ -121,34 +121,6 @@ body {
     content: '>';
 }
 
-/*.left .left_up, .left .left_down, .left .right_up, .left .right_down {
-    position: absolute;
-}
-
-.left .left_up, .left .left_down {
-    left: 33%;
-}
-
-.left .left_up::before, .left .left_down::before {
-    content: '<';
-}
-
-.left .right_up, .left .right_down {
-    right: 33%;
-}
-
-.left .right_up::before, .left .right_down::before {
-    content: '>';
-}
-
-.left .left_up, .left .right_up {
-    top: 33%;
-}
-
-.left .left_down, .left .right_down {
-    bottom: 33%;
-}*/
-
 
 
 /** CSS des éléments à droite **/
@@ -208,4 +180,15 @@ body {
     left: 50%;
     bottom: 20px;
     transform: translateX(-50%);
+}
+
+
+
+/** CSS de l'aide **/
+
+#help {
+    position: absolute;
+    background-color: #0008;
+    border: solid #0004 3px;
+    font-size: 0.75em;
 }

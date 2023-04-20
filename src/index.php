@@ -38,10 +38,10 @@
 					</label>
 
 					<label>
-						<p>Room Code <span>?</span></p>
+						<p>Room Code <span onmousemove="cursor_help()" onmouseout="cursor_help_remove()">?</span></p>
 						<input type="text" name="room_code">
 					</label>
-					<div id="info"></div>
+					<div class="hidden" id="help">Si vous ne mettez pas de code. Vous entrerez dans une partie publique aléatoire.</div>
 					
 					<nav>
 						<button class="play">Jouer</button>
@@ -65,10 +65,10 @@
 
 				<div class="right">
 					<label>
-						<p>Room Code <span>?</span></p>
+						<p>Room Code <span onmousemove="cursor_help()" onmouseout="cursor_help_remove()">?</span></p>
 						<input type="text" name="room_code">
 					</label>
-					<div id="info"></div>
+					<div class="hidden" id="help">Si vous ne mettez pas de code. Vous entrerez dans une partie publique aléatoire.</div>
 
 					<nav>
 						<button class="play">Jouer</button>

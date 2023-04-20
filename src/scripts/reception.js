@@ -46,3 +46,24 @@ function swap_select_player_connected() {
     content_selected.className = "hidden";
     content_unselected.className = "show";
 }
+
+
+
+
+/**
+ * Cette fonction affiche l'aide du curseur.
+ */
+function cursor_help() {
+    const help = document.getElementById("help");
+    help.className = "";
+}
+
+
+
+/**
+ * Cette fonction retire l'aide du curseur.
+ */
+function cursor_help_remove() {
+    const help = document.getElementById("help");
+    help.className = "hidden";
+}
