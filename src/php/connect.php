@@ -35,6 +35,7 @@
 
     /**
      * Cette fonction appele une base de données.
+     * Si la base de donnée n'existe pas, alors elle est crée.
      * 
      * @param host L'IP de l'hôte.
      * @param port Le port de l'IP.
