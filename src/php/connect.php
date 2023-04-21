@@ -7,12 +7,12 @@
      * @return db Renvoie la référence de la base de données.
      */
     function create_dataBase($db, $name) {
-        $request = "CREATE DATABASE IF NOT EXISTS \"$name\"
+        $request = "CREATE DATABASE IF NOT EXISTS $name
                         DEFAULT CHARACTER SET utf8mb4
                         DEFAULT COLLATE utf8mb4_general_ci;";
         @($db->query($request));
 
-        @($db->query("USE \"$name\";"));
+        @($db->query("USE $name;"));
 
         $request = "CREATE TABLE IF NOT EXISTS player (
                         id_player INT AUTO_INCREMENT NOT NULL,
