@@ -91,7 +91,7 @@
                         ?>
                             <h1>Inscription réussie !</h1>
                             <nav>
-                                <a href="./index.html">Retour au menu</a>
+                                <a href="./index.php">Retour au menu</a>
                             </nav>
                         <?php
                     }
