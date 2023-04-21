@@ -186,7 +186,7 @@ body {
 
 /** CSS de l'aide **/
 
-#help {
+.help {
     position: absolute;
     background-color: #0008;
     border: solid #0004 3px;

@@ -54,8 +54,9 @@ function swap_select_player_connected() {
  * Cette fonction affiche l'aide du curseur.
  */
 function cursor_help() {
-    const help = document.getElementById("help");
-    help.className = "";
+    const help = document.getElementsByName("help");
+    help[0].className = "help";
+    help[1].className = "help";
 }
 
 
@@ -64,6 +65,7 @@ function cursor_help() {
  * Cette fonction retire l'aide du curseur.
  */
 function cursor_help_remove() {
-    const help = document.getElementById("help");
-    help.className = "hidden";
+    const help = document.getElementsByName("help");
+    help[0].className = "help hidden";
+    help[1].className = "help hidden";
 }

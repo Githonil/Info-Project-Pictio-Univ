@@ -41,7 +41,7 @@
 						<p>Room Code <span onmousemove="cursor_help()" onmouseout="cursor_help_remove()">?</span></p>
 						<input type="text" name="room_code">
 					</label>
-					<div class="hidden" id="help">Si vous ne mettez pas de code. Vous entrerez dans une partie publique aléatoire.</div>
+					<div class="help hidden" name="help">Si vous ne mettez pas de code. Vous entrerez dans une partie publique aléatoire.</div>
 					
 					<nav>
 						<button class="play">Jouer</button>
@@ -68,7 +68,7 @@
 						<p>Room Code <span onmousemove="cursor_help()" onmouseout="cursor_help_remove()">?</span></p>
 						<input type="text" name="room_code">
 					</label>
-					<div class="hidden" id="help">Si vous ne mettez pas de code. Vous entrerez dans une partie publique aléatoire.</div>
+					<div class="help hidden" name="help">Si vous ne mettez pas de code. Vous entrerez dans une partie publique aléatoire.</div>
 
 					<nav>
 						<button class="play">Jouer</button>
