@@ -10,13 +10,14 @@
 		<title>Accueil</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/svg" href="./images/logo.svg">
 		<link rel="stylesheet" type="text/css" href="./styles/style.css">
 		<link rel="stylesheet" type="text/css" href="./styles/reception.css">
 	</head>
 	<body>
 		<main class="reception">
 			<nav class="select">
-				<button class="active" id="guest" onclick=<?= $connect_check ? "swap_select_guests_connected()" : "swap_select('guest','player')"; ?>>Invité</button>
+				<button class="active" id="guest" onclick=<?= $connect_check ? "swap_select_guest_connected()" : "swap_select('guest','player')"; ?>>Invité</button>
 				<button class="inactive" id="player" onclick=<?= $connect_check ? "swap_select_player_connected()" : "swap_select('player','guest')"; ?>>Joueur</button>
 			</nav>
 			
