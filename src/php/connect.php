@@ -1,17 +1,18 @@
 <?php
     /**
-     * Cette fonction crée la base de données de Pictio-univ.
+     * Cette fonction crée la base de données du site Pictio-univ.
      * 
      * @param db La base de données vide.
+     * @param name Le nom de la base de données.
      * @return db Renvoie la référence de la base de données.
      */
-    function create_dataBase($db) {
-        $request = "CREATE DATABASE IF NOT EXISTS pictio_univ
+    function create_dataBase($db, $name) {
+        $request = "CREATE DATABASE IF NOT EXISTS \"$name\"
                         DEFAULT CHARACTER SET utf8mb4
                         DEFAULT COLLATE utf8mb4_general_ci;";
         @($db->query($request));
 
-        @($db->query("USE pictio_univ;"));
+        @($db->query("USE \"$name\";"));
 
         $request = "CREATE TABLE IF NOT EXISTS player (
                         id_player INT AUTO_INCREMENT NOT NULL,
@@ -47,7 +48,7 @@
         if ($db->connect_errno) {
             $db = @(new mysqli($host, "root", ""));
         }
-        create_dataBase($db);
+        create_dataBase($db, $name);
 
         $request = "USE $name";
         @($db->query($request));
