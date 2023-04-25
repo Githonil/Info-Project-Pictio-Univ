@@ -1,0 +1,82 @@
+/** INITIALISATION **/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    width: 75%;
+    height: 75%;
+}
+
+
+
+/** CSS du logo **/
+
+img {
+    position: absolute;
+    left: -7%;
+}
+
+
+
+/** CSS de la section **/
+
+section {
+    padding: 20px;
+    border: solid #000 1px;
+    width: 100%;
+    height: 100%;
+}
+
+section * {
+    margin: 10px;
+}
+
+section, section form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+/** CSS du tableau **/
+
+table {
+    border: solid #000 1px;
+}
+
+td, th {
+    border: solid #000 1px;
+}
+
+
+
+/** CSS en mode téléphone **/
+
+@media (max-width: 1200px) {
+
+    img {
+        width: 20vw;
+        height: 20vh;
+        top: 5%;
+    }
+}

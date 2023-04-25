@@ -37,6 +37,8 @@
                                 
                                 <input type="submit" name="submit" value="C'est parti !">
                             </form>
+
+                            <a href="./index.php">Retour à l'accueil</a>
                         <?php
                     }
                     else {

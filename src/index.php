@@ -1,7 +1,5 @@
 <?php
-	session_start();
-
-	$connect_check = isset($_SESSION["pseudo"], $_SESSION["email"]);
+	include("./php/connect_check.php");
 ?>
 
 <!DOCTYPE html>
@@ -81,7 +79,7 @@
 					</nav>
 				</div>
 				
-				<button class="account">Mon compte</button>
+				<a href="./account.php" class="account">Mon compte</a>
 			</div>
 		</main>
 		<script src="./scripts/reception.js"></script>

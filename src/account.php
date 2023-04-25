@@ -1,13 +1,12 @@
 <?php
-	session_start();
-
-	$connect_check = isset($_SESSION["pseudo"], $_SESSION["email"]);
+	include("./php/connect_check.php");
+    include("./php/force_unaccess.php");
 ?>
 
 <!DOCTYPE html>
 <html lang="fr-FR">
     <head>
-        <title>Compte de Pseudo</title>
+        <title>Compte de <?= $_SESSION["pseudo"] ?></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/svg" href="./images/logo.svg">
@@ -46,7 +45,7 @@
                 <div class="out_box">
                     <div class="recap">
                         <img src="./images/base_character.svg" alt="character">
-                        <h2>Pseudo</h2>
+                        <h2><?= $_SESSION["pseudo"] ?></h2>
                     </div>
                     <a href="./logout.php">Déconnexion</a>
                     <a href="./signout.php">Supression du compte</a>

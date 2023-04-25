@@ -38,6 +38,7 @@
             if ($pseudo_no_error && $password_no_error)
                 $login_check = true;
                 session_start();
+                $_SESSION["id"] = $row["id_player"];
                 $_SESSION["pseudo"] = $pseudo;
                 $_SESSION["email"] = $email;
         }
