@@ -1,0 +1,184 @@
+/** INITIALISATIOn **/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    width: 75%;
+    height: 75%;
+}
+
+
+
+/** CSS du logo **/
+
+header img {
+    position: absolute;
+    left: -5%;
+}
+
+
+
+/** CSS des balises principales **/
+
+.account {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template: 50% 50% / 50% 50%;
+    gap: 3px;
+}
+
+.button_profile, .modification, .out_box, .reception {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid #000 1px;
+}
+
+.button_profile {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.modification {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.out_box {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.reception {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+
+
+/** CSS de button_profile **/
+
+.button_profile * {
+    margin: 10px;
+}
+
+
+
+/** CSS de modification **/
+
+.modification form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modification img {
+    width: 50%;
+    height: 50%;
+}
+
+.modification .custom_character {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+}
+
+.modification .custom_character img {
+    width: 100%;
+    height: 100%;
+    grid-column: 2;
+    grid-row: 1 / 4;
+}
+
+.modification .left_up, .modification .left_down, .modification .right_up, .modification .right_down {
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform: scale(0.75);
+}
+
+.modification .left_up {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.modification .left_down {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.modification .right_up {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.modification .right_down {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.modification .left_up::before, .modification .left_down::before {
+    content: '<';
+}
+
+.modification .right_up::before, .modification .right_down::before {
+    content: '>';
+}
+
+.modification label, .modification input {
+    width: 50%;
+}
+
+.modification label input {
+    width: 100%;
+}
+
+
+
+/** CSS de out_box **/
+
+.out_box * {
+    margin: 10px;
+}
+
+.recap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 25%;
+}
+
+.out_box img {
+    width: 50%;
+    height: 50%;
+}
+
+
+
+/** CSS de reception **/
+
+.reception .design {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    background-color: #0004;
+}
+
+.reception a {
+    position: absolute;
+    width: 75%;
+}

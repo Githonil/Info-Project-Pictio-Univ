@@ -15,6 +15,10 @@
 		<link rel="stylesheet" type="text/css" href="./styles/reception.css">
 	</head>
 	<body>
+		<header>
+			<img src="./images/logo.svg" alt="logo">
+			<h1>Pictio-Univ</h1>
+		</header>
 		<main class="reception">
 			<nav class="select">
 				<button class="active" id="guest" onclick=<?= $connect_check ? "swap_select_guest_connected()" : "swap_select('guest','player')"; ?>>Invité</button>
@@ -81,5 +85,6 @@
 			</div>
 		</main>
 		<script src="./scripts/reception.js"></script>
+		<?= $connect_check ? "<script src=\"./scripts/reception_connected.js\"></script>" : ""; ?>
 	</body>
 </html>
