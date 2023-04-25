@@ -48,7 +48,7 @@
                         <h2><?= $_SESSION["pseudo"] ?></h2>
                     </div>
                     <a href="./logout.php">Déconnexion</a>
-                    <a href="./signout.php">Supression du compte</a>
+                    <button onclick="spawn_popup()">Supression du compte</button>
                 </div>
 
                 <div class="reception">
@@ -57,5 +57,14 @@
                 </div>
             </div>
         </main>
+        <section class="hidden" id="popup">
+            <h1>Êtes-vous sûr de supprimer votre compte de manière définitive ?</h1>
+            <nav>
+                <button onclick="go_signout()">Oui</button>
+                <button onclick="despawn_popup()">Non</button>
+            </nav>
+        </section>
+
+        <script src="./scripts/signout.js"></script>
     </body>
 </html>

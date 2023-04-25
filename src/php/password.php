@@ -1,7 +1,6 @@
 <?php
     include("./php/connect.php");
-
-    $db = call_dataBase("localhost", "root", "", "pictio_univ", 3306);
+    include("./php/connect_fast.php");
 
     /**
      * Cette fonction vérifie si la méthode POST a été remplie.

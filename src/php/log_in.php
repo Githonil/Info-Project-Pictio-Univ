@@ -1,5 +1,6 @@
 <?php
     include("./php/connect.php");
+    include("./php/connect_fast.php");
 
     /**
      * Cette fonction vérifie si la méthode POST a été remplie.
@@ -11,8 +12,6 @@
             return true;
         return false;
     }
-
-    $db = call_dataBase("localhost", "root", "", "pictio_univ", 3306);
 
     $login_check = false;
 

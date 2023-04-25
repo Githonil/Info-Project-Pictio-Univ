@@ -182,3 +182,34 @@ header img {
     position: absolute;
     width: 75%;
 }
+
+
+
+/** CSS de la pop up **/
+
+.hidden {
+    display: none;
+}
+
+.popup {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #000a;
+    color: #f008;
+}
+
+.popup nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.popup nav button {
+    width: 10%;
+}
