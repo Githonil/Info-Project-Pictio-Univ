@@ -1,3 +1,9 @@
+<?php
+	session_start();
+
+	$connect_check = isset($_SESSION["pseudo"], $_SESSION["email"]);
+?>
+
 <!DOCTYPE html>
 <html lang="fr-FR">
     <head>
@@ -16,7 +22,7 @@
             <div class="account">
                 <nav class="button_profile">
                     <a href="#">Dessins enregistrer</a>
-                    <a href="#">Gestion des emails</a>
+                    <a href="./email.php">Gestion des emails</a>
                     <a href="#">Gestion du mot de passe</a>
                 </nav>
 
