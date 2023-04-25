@@ -22,7 +22,7 @@
                 <nav class="button_profile">
                     <a href="#">Dessins enregistrer</a>
                     <a href="./email.php">Gestion des emails</a>
-                    <a href="#">Gestion du mot de passe</a>
+                    <a href="./password.php">Gestion du mot de passe</a>
                 </nav>
 
                 <div class="modification">

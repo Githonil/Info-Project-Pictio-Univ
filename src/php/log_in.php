@@ -40,7 +40,6 @@
                 session_start();
                 $_SESSION["id"] = $row["id_player"];
                 $_SESSION["pseudo"] = $pseudo;
-                $_SESSION["email"] = $email;
         }
         else {
             $email_no_error = false;

@@ -65,7 +65,7 @@
 
                     <label>
                         Confimation de l'identité, saisissez votre mot de passe :
-                        <input type="password" name="password" placeholder="password" required>
+                        <input type="password" name="password" placeholder="Mot de passe" required>
                     </label>
                     <?php if (!$password_no_error) echo "<p class=\"error\">Le mot de passe est incorrect !</p>"; ?>
 
