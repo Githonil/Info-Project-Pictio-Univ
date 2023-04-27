@@ -129,14 +129,6 @@ header img {
     grid-row: 3;
 }
 
-.modification .left_up::before, .modification .left_down::before {
-    content: '<';
-}
-
-.modification .right_up::before, .modification .right_down::before {
-    content: '>';
-}
-
 .modification label, .modification input {
     width: 50%;
 }

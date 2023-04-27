@@ -41,7 +41,7 @@
 
             $id = ($result->fetch_assoc())["MAX(player.id_player)"];
 
-            $request = "INSERT INTO email (mail, id_player) VALUE (\"$email\", $id);";
+            $request = "INSERT INTO email (mail, id_player, img_profile) VALUE (\"$email\", $id, \"$default_img\");";
             @($db->query($request));
 
             $signin_check = true;

@@ -26,11 +26,11 @@
 			<div class=<?= $connect_check ? "hidden" : "show"; ?> id="guest_content">
 				<div class="left">
 					<div class="custom_character">
-						<img src="./images/base_character.svg" alt="character">
+						<img src="./images/base_character.svg" alt="character" id="character">
 						<button class="left_up"></button>
-						<button class="left_down"></button>
+						<button class="left_down" onclick="removeBody()"></button>
 						<button class="right_up"></button>
-						<button class="right_down"></button>
+						<button class="right_down" onclick="addBody()"></button>
 					</div>
 				</div>
 
@@ -62,8 +62,18 @@
 
 			<div class=<?= $connect_check ? "show" : "hidden"; ?> id="player_content_connected">
 				<div class="left">
-					<h2 id="pseudo"><?= $_SESSION["pseudo"]; ?></h2>
-					<img src="./images/base_character.svg" alt="character">
+					<h2 id="pseudo"><?= isset($_SESSION["pseudo"]) ? $_SESSION["pseudo"] : ""; ?></h2>
+					<img src=<?php
+					
+						if (isset($_SESSION["img"])) {
+							$img_profile = $_SESSION["img"];
+							echo "\"$img_profile\"";
+						}
+						else {
+							echo "\"./images/base_character.svg\"";
+						}
+					?>
+					alt="character">
 				</div>
 
 				<div class="right">
@@ -84,5 +94,6 @@
 		</main>
 		<script src="./scripts/reception.js"></script>
 		<?= $connect_check ? "<script src=\"./scripts/reception_connected.js\"></script>" : ""; ?>
+		<script src="./scripts/custom_character.js"></script>
 	</body>
 </html>

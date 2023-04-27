@@ -1,12 +1,11 @@
 <?php
-	include("./php/connect_check.php");
-    include("./php/force_unaccess.php");
+	include("./php/account.php");
 ?>
 
 <!DOCTYPE html>
 <html lang="fr-FR">
     <head>
-        <title>Compte de <?= $_SESSION["pseudo"] ?></title>
+        <title>Compte de <?= $_SESSION["pseudo"]; ?></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/svg" href="./images/logo.svg">
@@ -31,11 +30,12 @@
                             <input type="text" name="pseudo" placeholder="Pseudo du joueur" pattern="[a-zA-Z0-9]{1,30}">
                         </label>
                         <div class="custom_character">
-                            <img src="./images/base_character.svg" alt="character">
-                            <button class="left_up"></button>
-                            <button class="left_down"></button>
-                            <button class="right_up"></button>
-                            <button class="right_down"></button>
+                            <img src="./images/base_character.svg" alt="character" id="character">
+                            <input type="hidden" name="dataImg" id="dataImg">
+                            <input type="button" class="left_up" value="<">
+                            <input type="button" class="left_down" value="<" onclick="removeBody()">
+                            <input type="button" class="right_up" value=">">
+                            <input type="button" class="right_down" value=">" onclick="addBody()">
                         </div>
 
                         <input type="submit" name="submit" value="Changer">
@@ -44,8 +44,8 @@
 
                 <div class="out_box">
                     <div class="recap">
-                        <img src="./images/base_character.svg" alt="character">
-                        <h2><?= $_SESSION["pseudo"] ?></h2>
+                        <img src=<?php $img = $_SESSION["img"]; echo "\"$img\""; ?> alt="character">
+                        <h2><?= $_SESSION["pseudo"]; ?></h2>
                     </div>
                     <a href="./logout.php">Déconnexion</a>
                     <button onclick="spawn_popup()">Supression du compte</button>
@@ -66,5 +66,7 @@
         </section>
 
         <script src="./scripts/signout.js"></script>
+        <script src="./scripts/custom_character.js"></script>
+        <script src="./scripts/dataImg.js"></script>
     </body>
 </html>
