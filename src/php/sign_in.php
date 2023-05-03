@@ -33,7 +33,7 @@
 
         if ($password_no_error && $email_no_error) {
             $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-            $request = "INSERT INTO player (pseudo, password) VALUE (\"$pseudo\", \"$passwordHash\");";
+            $request = "INSERT INTO player (pseudo, password, img_profile, forever_account, score) VALUE (\"$pseudo\", \"$passwordHash\", \"$default_img\", 1, 0);";
             @($db->query($request));
 
             $request = "SELECT MAX(player.id_player) FROM player;";
@@ -41,7 +41,7 @@
 
             $id = ($result->fetch_assoc())["MAX(player.id_player)"];
 
-            $request = "INSERT INTO email (mail, id_player, img_profile) VALUE (\"$email\", $id, \"$default_img\");";
+            $request = "INSERT INTO email (mail, id_player) VALUE (\"$email\", $id);";
             @($db->query($request));
 
             $signin_check = true;

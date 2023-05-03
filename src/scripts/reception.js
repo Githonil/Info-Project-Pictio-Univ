@@ -37,3 +37,57 @@ function cursor_help_remove() {
     help[0].className = "help hidden";
     help[1].className = "help hidden";
 }
+
+
+
+/**
+ * Cette fonction lance un hébergement d'une partie.
+ */
+function host() {
+    createGame();
+    window.location = "./host.php";
+}
+
+
+
+/**
+ * Cette fonction lance un hébergement d'une partie en tant qu'invité.
+ */
+function hostGuest() {
+    const success = createAccount();
+    if (success === 0)
+        host();
+}
+
+
+
+/**
+ * Cette fonction lance une partie.
+ * 
+ * @param room_code Le code de la partie.
+ */
+function play(room_code) {
+    window.location = `./php/join_game.php?room_code=${room_code}`;
+}
+
+
+
+/**
+ * Cette fonction lance une partie avec un compte..
+ */
+function playAccount() {
+    const room_code = document.getElementById("room_code_account");
+    play(room_code.value);
+}
+
+
+
+/**
+ * Cette fonction lance une partie en tant qu'invité.
+ */
+function playGuest() {
+    const room_code = document.getElementById("room_code_guest");
+    const success = createAccount();
+    if (success === 0)
+        play(room_code.value);
+}

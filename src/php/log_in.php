@@ -24,7 +24,7 @@
         $pseudo = $_POST["pseudo"];
         $password = $_POST["password"];
 
-        $request = "SELECT player.id_player, player.pseudo, player.password, player.img_profile FROM player
+        $request = "SELECT player.id_player, player.pseudo, player.password, player.img_profile, player.score, player.room_code FROM player
                         INNER JOIN email ON email.id_player = player.id_player
                         WHERE email.mail = \"$email\";";
 
@@ -40,6 +40,8 @@
                 $_SESSION["id"] = $row["id_player"];
                 $_SESSION["pseudo"] = $pseudo;
                 $_SESSION["img"] = $row["img_profile"];
+                $_SESSION["score"] = $row["score"];
+                $_SESSION["room_code"] = $row["room_code"];
         }
         else {
             $email_no_error = false;

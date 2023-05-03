@@ -8,20 +8,27 @@
      */
     function create_dataBase($db, $name) {
         $request = "CREATE DATABASE IF NOT EXISTS $name
-                        DEFAULT CHARACTER SET utf8mb4
-                        DEFAULT COLLATE utf8mb4_general_ci;";
+                        DEFAULT CHARACTER SET utf8
+                        DEFAULT COLLATE utf8_general_ci;";
         @($db->query($request));
 
         @($db->query("USE $name;"));
 
+
+
         $request = "CREATE TABLE IF NOT EXISTS player (
                         id_player INT AUTO_INCREMENT NOT NULL,
                         pseudo VARCHAR(30) NOT NULL,
-                        password TEXT NOT NULL,
+                        password TEXT,
                         img_profile TEXT NOT NULL,
+                        forever_account BIT NOT NULL,
+                        score INT,
+                        room_code VARCHAR(8),
                         PRIMARY KEY (id_player)
                     ) ENGINE=InnoDB;";
         @($db->query($request));
+
+
 
         $request = "CREATE TABLE IF NOT EXISTS email (
                         id_mail INT AUTO_INCREMENT NOT NULL,
@@ -32,8 +39,112 @@
                     ) ENGINE=InnoDB;";
         @($db->query($request));
 
+
+
+        $request = "CREATE TABLE IF NOT EXISTS game (
+                        id_game INT AUTO_INCREMENT NOT NULL,
+                        id_player_host INT NOT NULL,
+                        room_code VARCHAR(8) NOT NULL,
+                        running BIT NOT NULL,
+                        img_party TEXT,
+                        private_party BIT NOT NULL,
+                        timer INT NOT NULL, 
+                        nb_rounds INT NOT NULL,
+                        nb_words INT NOT NULL,
+                        PRIMARY KEY (id_game),
+                        FOREIGN KEY (id_player_host) REFERENCES player (id_player)
+                    ) ENGINE=InnoDB;";
+        @($db->query($request));
+
+
+
+        $request = "CREATE TABLE IF NOT EXISTS word (
+                        id_word INT AUTO_INCREMENT NOT NULL,
+                        label VARCHAR(30) NOT NULL,
+                        PRIMARY KEY (id_word)
+                    ) ENGINE=InnoDB;";
+        @($db->query($request));
+
+
+
+        /*$requestTwo = "CREATE TABLE IF NOT EXISTS customword (
+                        id_custom INT AUTO_INCREMENT NOT NULL,
+                        label VARCHAR(30) NOT NULL,
+                        room_code VARCHAR(8) NOT NULL,
+                        PRIMARY KEY (id_custom)
+                    ) ENGINE=InnoDB;";
+        @($db->query($requestTwo));*/
+
+
+
+        /*$requestTwo = "CREATE TABLE IF NOT EXISTS chatbox (
+                        id_chat INT AUTO_INCREMENT NOT NULL,
+                        msg VARCHAR(130) NOT NULL,
+                        id_game INT NOT NULL,
+                        PRIMARY KEY (id_chat),
+                        FOREIGN KEY (id_game) REFERENCES game (id_game)
+                    ) ENGINE=InnoDB;";
+        @($db->query($requestTwo));*/
+
+        rest_create($db);
+
         return $db;
     }
+
+    /**
+     * Le reste de la fonction create_dataBase.
+     * 
+     * @param db La base de donnée.
+     * @return db Renvoie la base de donnée.
+     */
+    function rest_create($db) {
+        $request = "CREATE TABLE IF NOT EXISTS customword (
+                        id_custom INT AUTO_INCREMENT NOT NULL,
+                        label VARCHAR(30) NOT NULL,
+                        room_code VARCHAR(8) NOT NULL,
+                        PRIMARY KEY (id_custom)
+                    ) ENGINE=InnoDB;";
+        @($db->query($request));
+
+
+
+        $request = "CREATE TABLE IF NOT EXISTS chatbox (
+                        id_chat INT AUTO_INCREMENT NOT NULL,
+                        msg VARCHAR(130) NOT NULL,
+                        id_game INT NOT NULL,
+                        PRIMARY KEY (id_chat),
+                        FOREIGN KEY (id_game) REFERENCES game (id_game)
+                    ) ENGINE=InnoDB;";
+        @($db->query($request));
+
+        return $db;
+    }
+
+
+
+    
+    function fill_tableWords($db) {
+        $request = "SELECT word.id_word FROM word;";
+        $result = @($db->query($request));
+        $row = $result->fetch_assoc();
+
+        if ($row === null) {
+            $file = fopen("./words/wordsList.txt", "r+");
+
+            while (($line = fgets($file)) !== false) {
+                $db->set_charset("utf8");
+                $line = $db->real_escape_string($line);
+                $request = "INSERT INTO word (label) VALUES (\"$line\");";
+                @($db->query($request));
+            }
+
+            fclose($file);
+        }
+
+        return $db;
+    }
+
+
 
     /**
      * Cette fonction appele une base de données.
@@ -50,9 +161,10 @@
             $db = @(new mysqli($host, "root", ""));
         }
         create_dataBase($db, $name);
+        fill_tableWords($db);
 
-        $request = "USE $name";
-        @($db->query($request));
+        /*$request = "USE $name";
+        @($db->query($request));*/
 
         return $db;
     }

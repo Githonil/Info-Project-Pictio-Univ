@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+    <head>
+        <title>Partie : CODE</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/svg" href="./images/logo.svg">
+        <link rel="stylesheet" type="image/text" href="./styles/style.css">
+        <link rel="stylesheet" type="image/text" href="./styles/play.css">
+    </head>
+    <body>
+        <header>
+            <img src="./images/logo.svg" alt="logo">
+        </header>
+
+        <main>
+            <div class="canvasBox">
+                <form>
+                    <canvas id="canvas"></canvas>
+                    <input type="range" id="selectradius" name="selectradius" min="3" max="50" value="3" onchange="radiusout.value = selectradius.value">
+                    <div class="color">
+                        <div id="red"></div>
+                        <div id="pink"></div>
+                        <div id="purple"></div>
+                        <div id="green"></div>
+                        <div id="lightgreen"></div>
+                        <div id="blue"></div>
+                        <div id="skyblue"></div>
+                        <div id="yellow"></div>
+                        <div id="orange"></div>
+                        <div id="brown"></div>
+                        <div id="beige"></div>
+                        <div id="white"></div>
+                        <div id="gray"></div>
+                        <div id="dark"></div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="chatBox">
+
+            </div>
+        </main>
+    </body>
+</html>

@@ -37,18 +37,19 @@
 				<div class="right">
 					<label>
 						<p>Pseudo</p>
-						<input type="text" name="pseudo">
+						<input type="text" name="pseudo" id="pseudo_guest" required>
+						<p class="error hidden" id="msg_err">Le pseudo est requis</p>
 					</label>
 
 					<label>
 						<p>Room Code <span onmousemove="cursor_help()" onmouseout="cursor_help_remove()">?</span></p>
-						<input type="text" name="room_code">
+						<input type="text" name="room_code" id="room_code_guest">
 					</label>
 					<div class="help hidden" name="help">Si vous ne mettez pas de code. Vous entrerez dans une partie publique aléatoire.</div>
 					
 					<nav>
-						<button class="play">Jouer</button>
-						<button class="host">Héberger</button>
+						<button class="play" onclick="playGuest()">Jouer</button>
+						<button class="host" onclick="hostGuest()">Héberger</button>
 					</nav>
 				</div>
 			</div>
@@ -79,21 +80,23 @@
 				<div class="right">
 					<label>
 						<p>Room Code <span onmousemove="cursor_help()" onmouseout="cursor_help_remove()">?</span></p>
-						<input type="text" name="room_code">
+						<input type="text" name="room_code" id="room_code_account">
 					</label>
 					<div class="help hidden" name="help">Si vous ne mettez pas de code. Vous entrerez dans une partie publique aléatoire.</div>
 
 					<nav>
-						<button class="play">Jouer</button>
-						<button class="host">Héberger</button>
+						<button class="play" onclick="playAccount()">Jouer</button>
+						<button class="host" onclick="host()">Héberger</button>
 					</nav>
 				</div>
 				
 				<a href="./account.php" class="account">Mon compte</a>
 			</div>
 		</main>
+		<script src="./scripts/custom_character.js"></script>
+		<script src="./scripts/create_guest_account.js"></script>
+		<script src="./scripts/create_game.js"></script>
 		<script src="./scripts/reception.js"></script>
 		<?= $connect_check ? "<script src=\"./scripts/reception_connected.js\"></script>" : ""; ?>
-		<script src="./scripts/custom_character.js"></script>
 	</body>
 </html>
