@@ -14,7 +14,7 @@
     </head>
     <body>
         <header>
-            <img src="./images/logo.svg" alt="Logo">
+            <a href="./index.php"><img src="./images/logo.svg" alt="Logo"></a>
         </header>
         <main>
             <?php
@@ -28,8 +28,6 @@
 
                                 <input type="email" name="email" placeholder="prenom.nom@etu.univ-tours.fr" required>
                                 <?php if (!$email_no_error) echo "<p class=\"error\">L'email est inconnu !</p>"; ?>
-                                <input type="text" name="pseudo" placeholder="Pseudo du joueur" pattern="[a-zA-Z0-9]{1,30}" required>
-                                <?php if (!$pseudo_no_error) echo "<p class=\"error\">Le pseudo est incorrect !</p>"; ?>
                                 <input type="password" name="password" placeholder="Mot de passe" required>
                                 <?php if (!$password_no_error) echo "<p class=\"error\">Le mot de passe est incorrect !</p>"; ?>
                                 

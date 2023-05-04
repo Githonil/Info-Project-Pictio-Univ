@@ -13,7 +13,10 @@ header {
     align-items: center;
 }
 
-
+.logo_index{
+    margin-left: -25%;
+    margin-right: -25%;
+}
 
 /** CSS des balises principales **/
 
@@ -28,6 +31,7 @@ header {
     display: flex;
     justify-content: space-around;
     border: solid #000 1px;
+    border: none;
 }
 
 .hidden {
@@ -38,9 +42,26 @@ header {
     display: grid;
     grid-template: 100% / 50% 50%;
     border: solid #000 1px;
+    border: none;
 }
 
+.left, .right, .center, .active, .inactive{
+    background-color: #463B4C20;
+    border: none;
+}
 
+.active, .inactive{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.inactive{
+    transform: scaleX(0.97) scaleY(0.7);
+}
+
+.inactive_text {
+    transform: scaleY(1.4) scaleX(1.04);
+}
 
 /** CSS des sous balises **/
 
@@ -54,6 +75,8 @@ header {
 
 .center {
     grid-column: 1 / 3;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 .left, .right, .center {
@@ -71,13 +94,28 @@ header {
     padding: 20px;
 }
 
-
-
 /** CSS des éléments à gauche **/
 
 .left img {
     width: 50%;
     height: 50%;
+}
+
+.left_up, .left_down, .right_up, .right_down{
+    background: #f00;
+    font-family: 'Candy Beans';
+    border-style: none;
+    font-size: 150px;
+}
+
+.left_up, .right_up{
+    padding-top: -33%;
+    margin-bottom: -33%;
+}
+
+.left_down, .right_down{
+    margin-top: -33%;
+    padding-bottom: -33%;
 }
 
 .left .custom_character {

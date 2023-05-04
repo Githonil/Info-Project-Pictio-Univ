@@ -14,13 +14,13 @@
 	</head>
 	<body>
 		<header>
-			<img src="./images/logo.svg" alt="logo">
+			<a class="logo_index" href="#"><img src="./images/logo.svg" alt="logo"></a>
 			<h1>Pictio-Univ</h1>
 		</header>
 		<main class="reception">
 			<nav class="select">
-				<button class="active" id="guest" onclick=<?= $connect_check ? "swap_select_guest_connected()" : "swap_select('guest','player')"; ?>>Invité</button>
-				<button class="inactive" id="player" onclick=<?= $connect_check ? "swap_select_player_connected()" : "swap_select('player','guest')"; ?>>Joueur</button>
+				<button class=<?= $connect_check ? "inactive" : "active"; ?> id="guest" onclick=<?= $connect_check ? "swap_select_guest_connected()" : "swap_select('guest','player')"; ?>><p class=<?= $connect_check ? "inactive_text" : "active_text"; ?> id="guest_text">Invité</p></button>
+				<button class=<?= $connect_check ? "active" : "inactive"; ?> id="player" onclick=<?= $connect_check ? "swap_select_player_connected()" : "swap_select('player','guest')"; ?>><p class=<?= $connect_check ? "active_text" : "inactive_text"; ?> id="player_text">Joueur</p></button>
 			</nav>
 			
 			<div class=<?= $connect_check ? "hidden" : "show"; ?> id="guest_content">

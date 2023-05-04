@@ -102,7 +102,7 @@
     if ($row["running"] === 1) {
         ?>
 
-        <meta http-equiv="refresh" content="0;url=">
+        <meta http-equiv="refresh" content="0;url=./../play.php">
 
         <?php
         close_dataBase($db);

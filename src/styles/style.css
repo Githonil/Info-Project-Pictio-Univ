@@ -10,18 +10,45 @@ body {
     padding: 0;
     width: 100vw;
     height: 100vh;
+    background: linear-gradient(135deg, #89abe3,#ea738d);
+    font-family: 'Candy Beans';
 }
 
+button{
+    font-family: 'Candy Beans';
+}
 
+input{
+    font-family: 'Candy Beans';
+}
 
 /** CSS du logo **/
 
-header img {
+header a img {
     width: 25vw;
     height: 25vh;
+    user-select: none;
 }
 
+header a {
+    background: none;
+    border: none;
+}
 
+header a:hover {
+    background: none;
+    border: none;
+}
+
+header a:focus {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+img{
+    user-select: none;
+}
 
 /** Liens hypertextes **/
 
@@ -40,4 +67,46 @@ a:hover {
 
 a:focus {
     box-shadow: 3px 3px 10px #888;
+}
+
+
+
+/** Les images **/
+
+img {
+    object-fit: contain;
+}
+
+
+
+/** Les polices **/
+
+@font-face{
+    font-family: 'Candy Beans';
+    src: url('font/Candy_Beans.otf');
+}
+
+@font-face{
+    font-family: 'Nice Sugar';
+    src: url("font/Nice\ Sugar.ttf");
+}
+
+
+
+/** CSS des scrollbar **/
+
+::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+    background: #4444442b;
+    -webkit-border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c4c4c455;
+    -webkit-border-radius: 25px;
+}
+
+* {
+    scrollbar-color: #c4c4c455 #4444442b;
 }

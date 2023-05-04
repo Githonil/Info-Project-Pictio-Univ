@@ -22,14 +22,19 @@ main {
 
 /** CSS du logo **/
 
-img {
+header a {
     position: absolute;
-    left: 0;
+    left: -7%;
 }
 
 
 
 /** CSS des balises principales **/
+
+label{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
 
 .host {
     display: grid;
@@ -46,7 +51,8 @@ img {
 .config {
     grid-column: 1;
     grid-row: 2 / 4;
-    border: solid #000 1px;
+    border-radius: 30px;
+    background-color: #463B4C20;
     width: 100%;
     height: 100%;
     flex-direction: column;
@@ -89,8 +95,8 @@ img {
 }
 
 .player img {
-    width: 25%;
-    height: 25%;
+    width: 50%;
+    height: 50%;
 }
 
 .player h2 {

@@ -16,7 +16,7 @@
     </head>
     <body>
         <header>
-            <img src="./images/logo.svg" alt="Logo">
+            <a href="./index.php"><img src="./images/logo.svg" alt="Logo"></a>
         </header>
         <main>
             <section class="mdp">

@@ -65,29 +65,6 @@
                     ) ENGINE=InnoDB;";
         @($db->query($request));
 
-
-
-        /*$requestTwo = "CREATE TABLE IF NOT EXISTS customword (
-                        id_custom INT AUTO_INCREMENT NOT NULL,
-                        label VARCHAR(30) NOT NULL,
-                        room_code VARCHAR(8) NOT NULL,
-                        PRIMARY KEY (id_custom)
-                    ) ENGINE=InnoDB;";
-        @($db->query($requestTwo));*/
-
-
-
-        /*$requestTwo = "CREATE TABLE IF NOT EXISTS chatbox (
-                        id_chat INT AUTO_INCREMENT NOT NULL,
-                        msg VARCHAR(130) NOT NULL,
-                        id_game INT NOT NULL,
-                        PRIMARY KEY (id_chat),
-                        FOREIGN KEY (id_game) REFERENCES game (id_game)
-                    ) ENGINE=InnoDB;";
-        @($db->query($requestTwo));*/
-
-        rest_create($db);
-
         return $db;
     }
 
@@ -161,6 +138,7 @@
             $db = @(new mysqli($host, "root", ""));
         }
         create_dataBase($db, $name);
+        rest_create($db);
         fill_tableWords($db);
 
         /*$request = "USE $name";

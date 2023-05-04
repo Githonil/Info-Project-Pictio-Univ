@@ -10,7 +10,7 @@
                     WHERE game.room_code = \"$room_code\";";
     $result = @($db->query($request));
     $row = $result->fetch_assoc();
-
+    
     $is_owner = $row["id_player_host"] === $_SESSION["id"];
 ?>
 
@@ -28,7 +28,7 @@
     </head>
     <body>
         <header>
-            <img src="./images/logo.svg" alt="logo">
+            <a href="./index.php"><img src="./images/logo.svg" alt="logo"></a>
         </header>
 
         <main>

@@ -9,10 +9,14 @@ function swap_select(id_selected, id_unselected) {
     const element_unselected = document.getElementById(id_unselected);
     const content_selected = document.getElementById(id_selected.concat("_content"));
     const content_unselected = document.getElementById(id_unselected.concat("_content"));
+    const text_selected = document.getElementById(id_selected.concat("_text"));
+    const text_unselected = document.getElementById(id_unselected.concat("_text"))
     element_selected.className = "active";
     element_unselected.className = "inactive";
     content_selected.className = "show";
     content_unselected.className = "hidden";
+    text_selected.className = "active_text";
+    text_unselected.className = "inactive_text";
 }
 
 

@@ -1,0 +1,246 @@
+/** INITIALISATION **/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    position: absolute;
+    width: 75%;
+    height: 50%;
+    top: 15%;
+}
+
+main * {
+    margin: 5px;
+}
+
+
+
+/** CSS du logo **/
+
+header a {
+    position: absolute;
+    left: -7%;
+}
+
+
+
+/** CSS des éléments principales **/
+
+.info {
+    width: 100%;
+    border: solid #000 1px;
+    padding: 5px;
+}
+
+.box {
+    display: grid;
+    grid-template: 100% / 1fr 55% 1fr;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/** CSS de guests **/
+
+.guests {
+    grid-column: 1;
+    grid-row: 0;
+    overflow-y: scroll;
+    scrollbar-color: #445571 #89abe3;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    padding: 10px;
+    margin: 5px;
+    border: solid #000 1px;
+    box-sizing: border-box;
+}
+
+.player img {
+    width: 250%;
+    height: 250%;
+}
+
+.player h2 {
+    font-size: 75%;
+}
+
+
+
+/** CSS du canvasBox **/
+
+.canvasBox {
+    height: 100%;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+canvas {
+    border: solid #000 1px;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    cursor: none;
+    background-color: white;
+}
+
+.canvasBox form .color {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.canvasBox form .color input[type="button"] {
+    width: 25%;
+    height: 25%;
+    margin: 1px;
+    padding: 5px;
+    border: solid #000 1px;
+}
+
+#red {
+    background-color: red;
+}
+
+#pink {
+    background-color: pink;
+}
+
+#purple {
+    background-color: purple;
+}
+
+#green {
+    background-color: green;
+}
+
+#lightgreen {
+    background-color: lightgreen;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#skyblue {
+    background-color: skyblue;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#orange {
+    background-color: orange;
+}
+
+#brown {
+    background-color: brown;
+}
+
+#beige {
+    background-color: beige;
+}
+
+#white {
+    background-color: white;
+}
+
+#gray {
+    background-color: gray;
+}
+
+#black {
+    background-color: black;
+}
+
+
+
+/** CSS du chatBox **/
+
+.chatBox {
+    grid-column: 3;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid #000 1px;
+}
+
+.chatBox .messages {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.chatBox .messages .message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.5em;
+    width: 90%;
+    border: solid #000 1px;
+}
+
+.chatBox form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid #000 1px;
+}
+
+.chatBox form input {
+    width: 50%;
+}
+
+
+
+/** CSS du bouton quitter **/
+
+main a {
+    position: absolute;
+    bottom: -50%;
+}
+
+
+
+/** CSS du cursor **/
+
+div#cursor {
+    position: absolute;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    border: dotted #000 5px;
+    border-radius: 50px;
+    pointer-events: none;
+}
